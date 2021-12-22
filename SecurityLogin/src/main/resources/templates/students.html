@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<div >
+<form th:action="@{/logout}" method="post">
+
+<input type="submit" value="Sign out">
+
+</form>
+</div>
+<h1>List of Student </h1>
+<div>
+ <table border="1">
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Name</th>
+        </tr>
+        <tr th:each="student : ${students}">
+          <td th:utext="${student.id}">index</td>
+          <td th:utext="${student.name}">count</td>
+          <td th:utext="${student.email}">size</td>
+        </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
